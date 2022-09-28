@@ -13,22 +13,37 @@ softmax layer commented out and uses custom softmax function to print the probab
 
 ## To Compile and run the application
 
-1. Go to folder caffe_example_catsAnddogs
+1. Go to folder CUSTOM_SOFTMAX_IMPL
 
 2. Change the path in CMakeList.txt to your respective caffe install directory
 
-  ![]()
+[![IMAGE1](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image1.png)](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image1.png)
+
+
 
   ● Run cmake CMakeList.txt
-  ● makeTo classify a local image and compare probabities
-  Type  ./DEMO --image <image.jpg>
+  ● make
+
+## To classify a local image and compare probabities
+
+  Type  
+
+`./DEMO --image <image.jpg>`
   Below is a sample output from a sample image prediction
 
-3. First application prints the output probability using Softmax layer within Caffe
+1. First application prints the output probability using Softmax layer within Caffe
 
-4. Then the application will print the probability using FC8 output and then performing a
-  custom Softmax on the outputOptional Arguments :
-  --verbose:
+   [![IMAGE2](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image2.png)](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image2.png)
+
+2. Then the application will print the probability using FC8 output and then performing a
+   custom Softmax on the output
+
+   [![IMAGE2](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image3.png)](https://github.com/SubhajeetRoy/CAFFE_APPLICATIONS/blob/main/CUSTOM_SOFTMAX_IMPL/img/image3.png)
+
+3. Optional Arguments :
+
+```  
+--verbose:
   Use command  ./DEMO --image <image.jpg> --verbose
   This command will print every step and also print the binary outputs of below float
   buffers :
@@ -46,6 +61,12 @@ softmax layer commented out and uses custom softmax function to print the probab
   ● <imagename>prob_output.bin:prob Layer output When using using Softmax
   layer of Caffe
   ● <imagename>fc8_output.bin:Fc8 layer output
-  ● <imagename>customsoftmax_output.bin:Custom Softmax function outputResults :
+  ● <imagename>customsoftmax_output.bin:Custom Softmax function output
+```
+
+
+
+## Results :
+
   There was no major difference observed between the output of the Caffe Softmax layer
   and Custom Softmax function .
